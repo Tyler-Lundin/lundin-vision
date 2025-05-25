@@ -74,12 +74,12 @@ export const CONTENT = {
     headline: "Get in Touch",
     intro: "Schedule an appointment or reach out with any questions.",
     info: {
-      address: "123 Vision Street, Seattle, WA 98101",
-      phone: "(206) 555-0123",
-      email: "care@lundinvision.com",
+      address: "1221 S Hayford Rd, Spokane, WA 99224",
+      phone: "(509) 459-0619",
+      email: "doctor@lundinvision.com",
       hours: [
-        "Monday - Friday: 9:00 AM - 6:00 PM",
-        "Saturday: 9:00 AM - 2:00 PM",
+        "Monday - Friday: 9:00 AM - 5:00 PM",
+        "Saturday: Closed",
         "Sunday: Closed"
       ]
     },
@@ -88,28 +88,4 @@ export const CONTENT = {
       description: "Fill out the form below and we'll get back to you within 24 hours."
     }
   },
-
-  // Images/Photos Needed
-  requiredImages: [
-    {
-      id: "hero-image",
-      description: "Professional photo of Dr. Lundin with a patient",
-      usage: "Homepage hero section"
-    },
-    {
-      id: "office-exterior",
-      description: "Modern exterior shot of the office building",
-      usage: "About page and contact page"
-    },
-    {
-      id: "team-photos",
-      description: "Professional headshots of all team members",
-      usage: "About page team section"
-    },
-    {
-      id: "equipment",
-      description: "High-quality photos of modern eye examination equipment",
-      usage: "Services page"
-    }
-  ]
 }; 

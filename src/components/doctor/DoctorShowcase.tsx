@@ -51,35 +51,38 @@ export default function DoctorShowcase({ doctorId }: DoctorShowcaseProps) {
       </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="relative flex flex-wrap gap-y-14 items-center justify-center md:gap-x-16">
-          {/* ---------- IMAGE COLUMN ---------- */}
-          <div className="grid justify-center md:justify-end md:justify-self-end justify-self-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          {/* ---------- LEFT COLUMN: IMAGE & STATS ---------- */}
+          <div className="flex flex-col items-center lg:items-end">
             {/* Vintage framed portrait */}
-            <div className="relative aspect-square rounded-full w-64 sm:w-80 md:w-72 lg:w-80 xl:w-96 shadow-lg justify-self-center">
-              {/* photo */}
+            <div className="relative aspect-square rounded-full w-64 sm:w-80 md:w-72 lg:w-80 xl:w-96 shadow-lg">
               <Image src={photo} alt={name} fill className="object-cover shadow-lg rounded-full" priority />
-              {/* ornate border */}
               <span className="pointer-events-none absolute inset-0 ring-4 ring-gray-700/50 dark:ring-gray-500/30 rounded-full" />
             </div>
-            {/*   QUICK STATS   */}
-            <div className="mt-10 grid grid-cols-2 gap-6 sm:gap-8 md:max-w-md">
+
+            {/* Quick Stats */}
+            <div className="mt-10 grid grid-cols-2 gap-8 w-full max-w-md">
               <Stat value={`${experience}+`} label="Years Experience" />
               {satisfaction && <Stat value={satisfaction} label="Patient Satisfaction" />}
             </div>
           </div>
 
-          {/* ---------- TEXT COLUMN ---------- */}
-          <div className="text-center md:text-left md:max-w-xl text-[#2c2c2c] dark:text-[#e5e5e5]">
+          {/* ---------- RIGHT COLUMN: BIO, EXPERTISE & CTA ---------- */}
+          <div className="flex flex-col gap-8">
             {/* Lead paragraph */}
-            <p className="text-lg sm:text-xl leading-relaxed mb-5 text-[#3a3a3a] dark:text-[#d4d4d4] first-letter:text-6xl first-letter:font-extrabold first-letter:align-top first-letter:mr-2 first-letter:float-left first-letter:text-amber-900 dark:first-letter:text-amber-500">
-              {bio}
-            </p>
+            <div className="prose prose-lg dark:prose-invert max-w-none">
+              <p className="text-lg sm:text-xl leading-relaxed text-[#3a3a3a] dark:text-[#d4d4d4] first-letter:float-left first-letter:mr-3 first-letter:text-7xl first-letter:font-bold first-letter:text-amber-900 dark:first-letter:text-amber-500">
+                {bio}
+              </p>
+            </div>
 
-            {/* ------ EXPERTISE LIST ------ */}
+            {/* Expertise List */}
             {expertise.length > 0 && (
-              <div className="mb-6 grid justify-center md:justify-start">
-                <h3 className="text-xl font-semibold text-[#1f1f1f] dark:text-[#f5f5f5] mb-3 tracking-wide uppercase">Areas of Expertise</h3>
-                <ul className="space-y-2">
+              <div className="bg-white/50 dark:bg-black/50 p-6 rounded-lg shadow-sm">
+                <h3 className="text-xl font-semibold text-[#1f1f1f] dark:text-[#f5f5f5] mb-4 tracking-wide uppercase">
+                  Areas of Expertise
+                </h3>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {expertise.map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <svg className="mt-1 h-5 w-5 flex-none text-amber-900 dark:text-amber-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -89,22 +92,25 @@ export default function DoctorShowcase({ doctorId }: DoctorShowcaseProps) {
                           clipRule="evenodd"
                         />
                       </svg>
-                      <span className="text-left text-base sm:text-lg">{item}</span>
+                      <span className="text-base sm:text-lg">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
             )}
 
-            {/* ------ CTA BUTTONS & STAT BAR ------ */}
-            <div className="flex items-center justify-center sm:flex-row sm:justify-start gap-4 mt-8">
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 mt-4">
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center rounded-none border border-[#2c2c2c] dark:border-[#e5e5e5] bg-transparent px-6 py-3 text-base font-semibold text-[#2c2c2c] dark:text-[#e5e5e5] hover:bg-[#2c2c2c] dark:hover:bg-[#e5e5e5] hover:text-[#faf9f5] dark:hover:text-[#1a1a1a] transition-colors shadow-none"
+                className="inline-flex items-center justify-center rounded-none border-2 border-[#2c2c2c] dark:border-[#e5e5e5] bg-transparent px-8 py-4 text-base font-semibold text-[#2c2c2c] dark:text-[#e5e5e5] hover:bg-[#2c2c2c] dark:hover:bg-[#e5e5e5] hover:text-[#faf9f5] dark:hover:text-[#1a1a1a] transition-colors shadow-none flex-1 sm:flex-none"
               >
                 Book an Appointment
               </a>
-              <a href="#services" className="relative text-base font-semibold text-amber-900 dark:text-amber-500 underline-offset-4 hover:underline">
+              <a 
+                href="#services" 
+                className="inline-flex items-center justify-center text-base font-semibold text-amber-900 dark:text-amber-500 hover:underline underline-offset-4"
+              >
                 View Services
               </a>
             </div>
@@ -118,7 +124,7 @@ export default function DoctorShowcase({ doctorId }: DoctorShowcaseProps) {
 /* ------------------ REUSABLE STAT COMPONENT ------------------ */
 function Stat({ value, label }: { value: string; label: string }) {
   return (
-    <div className="text-center md:text-left">
+    <div className="text-center lg:text-left">
       <p className="text-3xl font-extrabold tracking-tight text-amber-900 dark:text-amber-500">{value}</p>
       <p className="mt-1 text-xs font-medium text-[#464646] dark:text-[#a3a3a3] uppercase tracking-wider">{label}</p>
     </div>
