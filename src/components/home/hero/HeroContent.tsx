@@ -1,6 +1,6 @@
 export function HeroContent() {
   return (
-    <div className="relative z-10 mx-auto max-w-3xl px-6 text-center sm:py-32 lg:px-8">
+    <div className="relative z-10 mx-auto max-w-3xl px-6 text-center lg:px-8">
       <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight">
         Clear Vision. Genuine Care.
       </h1>

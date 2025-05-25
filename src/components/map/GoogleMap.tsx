@@ -6,8 +6,6 @@ interface GoogleMapProps {
   address: string;
 }
 
-const libraries: ("places")[] = ["places"];
-
 export default function GoogleMapComponent({ address }: GoogleMapProps) {
   const [center, setCenter] = useState({ lat: 0, lng: 0 });
   const [isGeocoding, setIsGeocoding] = useState(true);
@@ -25,7 +23,6 @@ export default function GoogleMapComponent({ address }: GoogleMapProps) {
 
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: apiKey,
-    libraries,
   });
 
   useEffect(() => {
