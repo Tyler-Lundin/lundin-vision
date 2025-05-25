@@ -1,0 +1,111 @@
+{
+    "project": "LundinVision.com",
+    "phases": [
+      {
+        "phase": 0,
+        "title": "Project Setup",
+        "tasks": [
+          "Install Next.js (latest)",
+          "Add Tailwind CSS + config",
+          "Set up shadcn/ui or component lib",
+          "Initialize git repo"
+        ]
+      },
+      {
+        "phase": 1,
+        "title": "Config & Dummy Data",
+        "tasks": [
+          "Set up `config.ts` for static data",
+          "Define loose `types.ts`",
+          "Prepare dummy service & team entries"
+        ]
+      },
+      {
+        "phase": 1.5,
+        "title": "Content Planning",
+        "tasks": [
+          "List service offerings",
+          "Write homepage hero tagline + CTA",
+          "Draft bio and contact page content",
+          "Plan images/photos needed"
+        ]
+      },
+      {
+        "phase": 2,
+        "title": "Pages Setup",
+        "tasks": [
+          "Home page",
+          "Services page",
+          "About/Bio page",
+          "Contact page",
+          "404 page"
+        ]
+      },
+      {
+        "phase": 2.5,
+        "title": "Content Creation",
+        "tasks": [
+          "Create reusable top level components",
+          "Navigation which collapses into hamburger menu on mobile and has a drawer pull down from the fixed top bar",
+          "Clean Footer with copyright information, and developer signature (Tyler Lundin)"
+        ]
+      },
+      {
+        "phase": 3,
+        "title": "UI/UX Polish",
+        "tasks": [
+          "Implement responsive layout",
+          "Add hover states, transitions",
+          "Use accessible components",
+          "Improve visual hierarchy"
+        ]
+      },
+      {
+        "phase": 4,
+        "title": "Loading & Error Handling",
+        "tasks": [
+          "Add skeleton loaders or spinners",
+          "Handle contact form errors",
+          "Fallbacks for broken content or images"
+        ]
+      },
+      {
+        "phase": 5,
+        "title": "Type Finalization",
+        "tasks": [
+          "Lock down all `types.ts` interfaces",
+          "Ensure type-safe props across components",
+          "Add zod validation (if needed)"
+        ]
+      },
+      {
+        "phase": 5.5,
+        "title": "Accessibility & SEO",
+        "tasks": [
+          "Run a Lighthouse audit",
+          "Add meta + OG tags",
+          "Ensure keyboard nav + color contrast",
+          "Implement semantic HTML"
+        ]
+      },
+      {
+        "phase": 6,
+        "title": "Database (Optional)",
+        "tasks": [
+          "Set up Supabase or similar backend",
+          "Create contact submissions table",
+          "Integrate edge function or API route"
+        ]
+      }
+    ],
+    "philosophies": [
+      {
+        "philosophy": "Keep it simple",
+        "description": "Avoid unnecessary complexity. Focus on core functionality and user experience."
+      },
+      {
+        "philosophy": "Break up components into smaller, reusable pieces",
+        "description": "This makes it easier to maintain and reuse code."
+      }
+    ]
+  } 
