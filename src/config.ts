@@ -16,13 +16,6 @@ export const CONFIG = {
   ] as Service[],
   team: [
     {
-      id: "tyler-lundin",
-      name: "Tyler Lundin",
-      role: "Lead Developer & Designer",
-      photo: "/images/tyler.png",
-      bio: "Passionate about creating beautiful and functional digital experiences.",
-    },
-    {
         id: "bruce-lundin",
         name: "Dr. Bruce Lundin",
         role: "Lead Optometrist",
@@ -46,6 +39,15 @@ export const CONFIG = {
       photo: "/images/hillary-bruce.jpg",
       satisfaction: "99%",
       expertise: []
+    },
+
+
+    {
+      id: "tyler-lundin",
+      name: "Tyler Lundin",
+      role: "Lead Developer & Designer",
+      photo: "/images/tyler.png",
+      bio: "Passionate about creating beautiful and functional digital experiences.",
     },
   ] as TeamMember[],
   // Add other static configuration data here
