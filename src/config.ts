@@ -19,6 +19,7 @@ export const CONFIG = {
       id: "tyler-lundin",
       name: "Tyler Lundin",
       role: "Lead Developer & Designer",
+      photo: "/images/tyler.png",
       bio: "Passionate about creating beautiful and functional digital experiences.",
     },
     {
@@ -36,6 +37,15 @@ export const CONFIG = {
           "Dry Eye & Allergy Relief",
           "Eyeglass Prescription Updates",
         ],
+    },
+    {
+      id: "hillary-lundin",
+      name: "Hillary Lundin",
+      role: "Optometrist (Pending Final Certification)",
+      bio: "Hillary recently graduated and has been an optician for over 20 years. She is currently preparing for her final certification exam and is dedicated to providing the best possible care for her patients.",
+      photo: "/images/hillary-bruce.jpg",
+      satisfaction: "99%",
+      expertise: []
     },
   ] as TeamMember[],
   // Add other static configuration data here
