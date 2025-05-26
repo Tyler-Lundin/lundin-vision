@@ -4,11 +4,15 @@ import { useEffect, useState } from 'react';
 
 interface GoogleMapProps {
   address: string;
+  coordinates: {
+    lat: number;
+    lng: number;
+  };
 }
 
-export default function GoogleMapComponent({ address }: GoogleMapProps) {
-  const [center, setCenter] = useState({ lat: 0, lng: 0 });
-  const [isGeocoding, setIsGeocoding] = useState(true);
+export default function GoogleMapComponent({ address, coordinates }: GoogleMapProps) {
+  const [center, setCenter] = useState(coordinates);
+  const [isGeocoding, setIsGeocoding] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY;
@@ -26,22 +30,8 @@ export default function GoogleMapComponent({ address }: GoogleMapProps) {
   });
 
   useEffect(() => {
-    if (!isLoaded || !address) return;
-
-    const geocoder = new google.maps.Geocoder();
-    geocoder.geocode({ address }, (results, status) => {
-      if (status === 'OK' && results?.[0]) {
-        const location = results[0].geometry.location;
-        setCenter({
-          lat: location.lat(),
-          lng: location.lng(),
-        });
-      } else {
-        setError(`Geocoding failed: ${status}`);
-      }
-      setIsGeocoding(false);
-    });
-  }, [isLoaded, address]);
+    setCenter(coordinates);
+  }, [coordinates]);
 
   const handleNavigate = () => {
     // Create URLs for different map applications
@@ -63,7 +53,7 @@ export default function GoogleMapComponent({ address }: GoogleMapProps) {
     );
   }
 
-  if (!isLoaded || isGeocoding) {
+  if (!isLoaded) {
     return (
       <div className="w-full aspect-square flex items-center justify-center bg-gray-100 dark:bg-gray-800">
         <span className="text-gray-400 dark:text-gray-600">Loading map...</span>
@@ -93,16 +83,17 @@ export default function GoogleMapComponent({ address }: GoogleMapProps) {
           streetViewControl: false,
           rotateControl: false,
           fullscreenControl: false,
+          mapTypeId: 'satellite',
           styles: [
             {
               featureType: "all",
               elementType: "labels.text.fill",
-              stylers: [{ color: "#2c2c2c" }],
+              stylers: [{ color: "#ffffff" }],
             },
             {
               featureType: "all",
               elementType: "labels.text.stroke",
-              stylers: [{ color: "#ffffff" }],
+              stylers: [{ color: "#000000" }],
             },
             {
               featureType: "poi",

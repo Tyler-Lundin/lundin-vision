@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { CONFIG } from '@/config';
 import { MainLayout } from '@/components/layout/MainLayout';
 import '@/styles/globals.css';
+import { LocationProvider } from '@/context/LocationContext';
 
 import { Roboto } from 'next/font/google';
 
@@ -34,7 +35,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body className={`h-full ${roboto.className}`}>
-        <MainLayout>{children}</MainLayout>
+        <LocationProvider>
+          <MainLayout>{children}</MainLayout>
+        </LocationProvider>
       </body>
     </html>
   );
