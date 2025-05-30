@@ -49,7 +49,7 @@ export const CONFIG = {
       role: "Web Developer",
       photo: "/images/tyler.webp",
       bio: "Passionate about creating beautiful and functional digital experiences.",
-      href: "https://www.tylerweb.dev",
+      href: "https://tylerweb.dev",
       experience: 4,
       expertise: [
         "Web Development",
