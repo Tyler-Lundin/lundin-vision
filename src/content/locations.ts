@@ -33,13 +33,13 @@ export const LOCATIONS: Location[] = [
         lng: -117.558822078323,
       },
       hours: {
-        monday: ["9:00 AM - 7:00 PM"],
-        tuesday: ["9:00 AM - 7:00 PM"],
-        wednesday: ["9:00 AM - 7:00 PM"],
-        thursday: ["9:00 AM - 7:00 PM"],
-        friday: ["9:00 AM - 7:00 PM"],
-        saturday: ["9:00 AM - 6:00 PM"],
-        sunday: ["12:00 PM - 5:00 PM"]
+        monday: ["9:00 AM - 5:00 PM"],
+        tuesday: ["9:00 AM - 5:00 PM"],
+        wednesday: ["9:00 AM - 5:00 PM"],
+        thursday: ["9:00 AM - 5:00 PM"],
+        friday: ["9:00 AM - 5:00 PM"],
+        saturday: [],
+        sunday: []
       },
       isMainOffice: true,
       description: "Located inside Walmart Supercenter in Airway Heights, WA"
