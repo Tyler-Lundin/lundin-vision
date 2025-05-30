@@ -1,4 +1,5 @@
 import { CONTENT } from '@/content';
+import BackgroundTexture from '../ui/BackgroundTexture';
 
 export default function InsuranceInfo() {
   const { contact } = CONTENT;
@@ -20,7 +21,8 @@ export default function InsuranceInfo() {
   return (
     <section className="relative isolate py-16 sm:py-24 bg-[#faf9f5] dark:bg-[#1a1a1a] text-[#2c2c2c] dark:text-[#e5e5e5] font-serif">
       {/* Paper texture overlay */}
-      <div className="pointer-events-none absolute inset-0 bg-[url('/images/paper-texture.webp')] bg-repeat opacity-20 dark:invert dark:blur-[2px]" />
+      <BackgroundTexture bottom={false}/>
+
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-3">
           {/* Insurance */}

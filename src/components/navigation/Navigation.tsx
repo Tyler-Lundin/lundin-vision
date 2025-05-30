@@ -19,7 +19,7 @@ export default function Navigation() {
 
   return (
     <header className="fixed top-0 z-40 w-screen">
-    <nav className={`max-w-7xl  backdrop-blur-lg grid items-center mx-3 mt-3 px-4 sm:px-6 lg:px-8 rounded-lg z-50 transition-all duration-300 ${isScrolled ? 'h-10 bg-gradient-to-b from-white/50 to-white/25 dark:from-black/50 dark:to-black/25 shadow-sm' : 'h-16 bg-white dark:bg-black'}`}>
+    <nav className={`max-w-7xl mx-auto backdrop-blur-lg grid items-center mx-3 border-[1px] border-black/25 dark:border-white/25 mt-3 px-4 sm:px-6 lg:px-8 rounded-lg z-50 transition-all duration-300 ${isScrolled ? 'h-10 bg-gradient-to-b from-gray-300/50 to-gray-100/50 dark:from-black/50 dark:to-black/25 shadow-sm' : 'h-16 bg-white dark:bg-black'}`}>
       <div className="relative">
         <div className="flex justify-between h-full items-center">
           <div className="flex-shrink-0">

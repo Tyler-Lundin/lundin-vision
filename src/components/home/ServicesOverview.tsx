@@ -1,11 +1,13 @@
 import { CONTENT } from '@/content';
+import BackgroundTexture from '../ui/BackgroundTexture';
 
 export default function ServicesOverview() {
   const { services } = CONTENT;
   return (
     <section className="relative isolate py-20 sm:py-28 bg-[#faf9f5] dark:bg-[#1a1a1a] text-[#2c2c2c] dark:text-[#e5e5e5] font-serif">
       {/* Paper texture overlay */}
-      <div className="pointer-events-none absolute inset-0 bg-[url('/images/paper-texture.webp')] bg-repeat opacity-20 dark:invert dark:blur-[2px]" />
+      <BackgroundTexture  bottom={false}/>
+      
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-amber-900 dark:text-amber-500 mb-4">

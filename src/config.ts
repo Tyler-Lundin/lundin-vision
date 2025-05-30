@@ -35,20 +35,29 @@ export const CONFIG = {
       id: "hillary-lundin",
       name: "Hillary Lundin",
       role: "Optometrist (Pending Final Certification)",
-      bio: "Hillary recently graduated and has been an optician for over 20 years. She is currently preparing for her final certification exam and is dedicated to providing the best possible care for her patients.",
-      photo: "/images/hillary-bruce.jpg",
+      bio: "Hillary recently graduated Pacific University College of Optometry. She is always looking for new ways to improve her skills and provide the best possible care for her patients.",
+      photo: "/images/hillary.jpeg",
       satisfaction: "99%",
-      expertise: []
+      expertise: [],
+      experience: 1,
     },
 
 
     {
       id: "tyler-lundin",
       name: "Tyler Lundin",
-      role: "Lead Developer & Designer",
-      photo: "/images/tyler.png",
+      role: "Web Developer",
+      photo: "/images/tyler.webp",
       bio: "Passionate about creating beautiful and functional digital experiences.",
+      href: "https://www.tylerweb.dev",
+      experience: 4,
+      expertise: [
+        "Web Development",
+        "UI/UX Design",
+        "Frontend Development",
+        "Backend Development",
+      ],
     },
-  ] as TeamMember[],
+  ] satisfies TeamMember[],
   // Add other static configuration data here
 }; 

@@ -17,11 +17,11 @@ export function MainLayout({ children, title, description }: MainLayoutProps) {
     <div className="min-h-screen w-screen overflow-x-hidden flex flex-col bg-white dark:bg-black">
         <Navigation />
 
-      <main className="flex-1">
+      <main className="flex-1 pb-96 relative">
         {children}
+        <Footer />
       </main>
 
-      <Footer />
     </div>
   );
 } 

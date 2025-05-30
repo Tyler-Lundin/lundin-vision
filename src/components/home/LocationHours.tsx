@@ -2,6 +2,7 @@
 import { useLocation } from '@/context/LocationContext';
 import GoogleMapComponent from '../map/GoogleMap';
 import LocationSelector from '../location/LocationSelector';
+import BackgroundTexture from '../ui/BackgroundTexture';
 
 export default function LocationHours() {
   const { selectedLocation } = useLocation();
@@ -9,7 +10,7 @@ export default function LocationHours() {
   return (
     <section className="relative isolate py-16 sm:py-24 bg-[#faf9f5] dark:bg-[#1a1a1a] text-[#2c2c2c] dark:text-[#e5e5e5] font-serif">
       {/* Paper texture overlay */}
-      <div className="pointer-events-none absolute inset-0 bg-[url('/images/paper-texture.webp')] bg-repeat opacity-20 dark:invert dark:blur-[2px]" />
+      <BackgroundTexture top={false}/>  
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
         <div className="flex justify-center mb-8">
           <LocationSelector />

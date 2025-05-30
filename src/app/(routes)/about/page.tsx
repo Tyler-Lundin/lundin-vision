@@ -1,5 +1,7 @@
 import { CONTENT } from '@/content';
 import { CONFIG } from '@/config';
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
+import { Link } from 'lucide-react';
 
 export const metadata = {
   title: 'About Us',
@@ -75,7 +77,7 @@ export default function AboutPage() {
                   </span>
                   
                   <div className="flex items-center gap-4">
-                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-full ring-2 ring-amber-900/20 dark:ring-amber-500/20 bg-[#faf9f5] dark:bg-[#1a1a1a] text-amber-900 dark:text-amber-500 shadow-sm">
+                    <span className="inline-flex p-1 aspect-square items-center justify-center rounded-full ring-2 ring-amber-900/20 dark:ring-amber-500/20 bg-[#faf9f5] dark:bg-[#1a1a1a] text-amber-900 dark:text-amber-500 shadow-sm">
                       <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M9 12.75L11.25 15 15 9.75" />
                         <circle cx="12" cy="12" r="9" />
@@ -134,6 +136,13 @@ export default function AboutPage() {
                         <p className="text-xs text-[#464646] dark:text-[#a3a3a3] italic mt-2">
                           {member.experience}+ years of experience
                         </p>
+                      )}
+
+                      {member.href && (
+                        <a href={member.href} target="_blank" rel="noopener noreferrer" className="text-sm flex justify-between items-center gap-2 border rounded-sm p-2 border-amber-900/30 dark:border-amber-500/30 text-amber-900 dark:text-amber-500 font-semibold leading-relaxed">
+                          {member.name.split(' ')[0]}'s Website
+                          <Link className="w-4 h-4" />
+                        </a>
                       )}
                     </div>
                   </div>

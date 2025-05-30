@@ -13,7 +13,7 @@ export interface TeamMember {
   role: string;
   bio: string;
   experience: number;
-
+  href?: string;
   /**  Relative path to photo image asset */
   photo?: string;
 

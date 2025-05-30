@@ -1,4 +1,5 @@
 import { CONFIG } from '@/config';
+import BackgroundTexture from '../ui/BackgroundTexture';
 import Image from 'next/image';
 
 interface DoctorShowcaseProps {
@@ -28,8 +29,8 @@ export default function DoctorShowcase({ doctorId }: DoctorShowcaseProps) {
     /* ---------- OUTER SECTION : VINTAGE VIBE ---------- */
     <section className="relative isolate overflow-hidden py-28 sm:py-32 bg-[#faf9f5] dark:bg-[#1a1a1a] text-[#2c2c2c] dark:text-[#e5e5e5] font-serif ring-1 ring-gray-700/10 dark:ring-gray-500/10 shadow-md">
       {/* Paper texture overlay */}
-      <div className="pointer-events-none absolute inset-0 bg-[url('/images/paper-texture.webp')] bg-repeat opacity-25 dark:invert blur-[2px]" />
-
+      <BackgroundTexture top={false}/>
+      
       {/* ----- HEADER ----- */}
       <div className="relative pb-14 w-fit mx-auto">
         <h1 className="text-4xl sm:text-5xl font-black tracking-tight mb-6 text-center">
@@ -56,8 +57,8 @@ export default function DoctorShowcase({ doctorId }: DoctorShowcaseProps) {
           <div className="flex flex-col items-center lg:items-end">
             {/* Vintage framed portrait */}
             <div className="relative aspect-square rounded-full w-64 sm:w-80 md:w-72 lg:w-80 xl:w-96 shadow-lg">
-              <Image src={photo} alt={name} fill className="object-cover shadow-lg rounded-full" priority />
-              <span className="pointer-events-none absolute inset-0 ring-4 ring-gray-700/50 dark:ring-gray-500/30 rounded-full" />
+              <Image src={photo} alt={name} fill className="object-cover shadow-lg rounded-full dark:brightness-90" priority />
+              <span className="pointer-events-none absolute inset-0 ring-4 ring-black dark:ring-white/50 rounded-full" />
             </div>
 
             {/* Quick Stats */}
